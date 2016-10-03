@@ -14,16 +14,13 @@
     function searchService($http, ApiBasePath) {
         var service = this;
 
-        service.foundItems = [];
-
         service.removeItem = function(index) {
-            console.log(index);
             service.foundItems.splice(index, 1);
         };
 
         service.getMatchedMenuItems = function (searchTerm) {
 
-            service.foundItems = [];
+
 
             return $http({
                 method: "GET",
@@ -32,7 +29,8 @@
                 // process result and only keep items that match
                 var totalItems = result.data.menu_items;
                 var i;
-
+                service.foundItems = [];
+                
                 for (i = 0; i < totalItems.length; i++) {
                     if (totalItems[i].description.indexOf(searchTerm) > -1) {
                         service.foundItems.push(totalItems[i]);
