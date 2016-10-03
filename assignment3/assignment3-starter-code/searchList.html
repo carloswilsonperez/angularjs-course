@@ -1,0 +1,14 @@
+<div id="blockSearch">
+    <ul>
+        <li ng-repeat="item in list.items">
+            <div class="resultsWrapper">
+                <div id="number" class="boxResults">{{$index + 1}}</div>
+                <div id="shortName" class="boxResults">Short name: {{item.short_name}}</div>
+                <div id="name" class="boxResults">Name: {{item.name}}</div>
+                <div id="description" class="boxResults">Description: {{item.description}}</div>
+                <button class="btn btn-primary" ng-click="list.onRemove({index: $index})">Don't want this one!</button>
+            </div>
+        </li>
+    </ul>
+    <div class="error" ng-if="list.cookiesInList()">Nothing found</div>
+</div>
