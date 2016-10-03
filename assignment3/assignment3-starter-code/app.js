@@ -73,7 +73,7 @@
         var ddo = {
             templateUrl: 'searchList.html',
             scope: {
-                items: '=',
+                listItems: '=',
                 onRemove: '&'
             },
             controller: foundDirectiveController,
@@ -88,7 +88,7 @@
         var list = this;
 
         list.cookiesInList = function () {
-            if (list.items === undefined || list.items.length > 0) {
+            if (list.listItems === undefined || list.listItems.length > 0) {
                 return false;
             }
 
