@@ -20,8 +20,6 @@
 
         service.getMatchedMenuItems = function (searchTerm) {
 
-
-
             return $http({
                 method: "GET",
                 url: ApiBasePath + "menu_items.json"
@@ -30,7 +28,7 @@
                 var totalItems = result.data.menu_items;
                 var i;
                 service.foundItems = [];
-                
+
                 for (i = 0; i < totalItems.length; i++) {
                     if (totalItems[i].description.indexOf(searchTerm) > -1) {
                         service.foundItems.push(totalItems[i]);
@@ -90,7 +88,7 @@
         var list = this;
 
         list.cookiesInList = function () {
-            if (list.items && list.items.length > 0) {
+            if (list.items === undefined || list.items.length > 0) {
                 return false;
             }
 
