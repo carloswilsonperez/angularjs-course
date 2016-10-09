@@ -1,0 +1,9 @@
+
+<h3>The Following are the Items for the chosen Category:</h3>
+<ul>
+  <li ng-repeat="item in $ctrl.items"
+      ui-sref="mainList.itemDetail({itemShortName: item.short_name})">
+     {{ item.short_name }}  {{item.description}}
+  </li>
+</ul>
+<shopping-list-details items="itemDetail.items"></shopping-list-details>
