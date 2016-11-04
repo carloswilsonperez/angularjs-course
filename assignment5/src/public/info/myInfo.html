@@ -1,0 +1,31 @@
+<div class="container">
+    <h2 id="menu-categories-title" class="text-center">Your Info</h2>
+    <div class="text-center">
+        This is your registered information:
+    </div>
+
+    <div class="form-group" ng-if="!infoCtrl.show">
+        Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+    </div>
+
+    <div class="form-group" ng-if="infoCtrl.show">
+        <div>First Name : {{infoCtrl.userData.firstName}}</div>
+        <div>Last Name : {{infoCtrl.userData.lastName}}</div>
+        <div>Email : {{infoCtrl.userData.email}}</div>
+        <div>Phone Number : {{infoCtrl.userData.phone}}</div>
+        <br>
+        <br>
+        <div>And this is your Favorite Menu:</div>
+        <br>
+        <div class="menu-item-photo-info">
+            <div>{{$ctrl.menuItem.short_name}}</div>
+            <img class="img-responsive" width="250" height="150" ng-src="{{infoCtrl.ApiPath}}/images/{{infoCtrl.userDish.short_name}}.jpg" alt="{{infoCtrl.userDish.name}}">
+            <span>{{infoCtrl.userDish.name}}</span>
+            <br>
+            <span>{{infoCtrl.userDish.description}}</span>
+        </div>
+
+    </div>
+
+
+</div>

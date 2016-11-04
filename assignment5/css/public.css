@@ -84,15 +84,23 @@
   font-size: .6em;
 }
 .menu-item-photo {
-  position: relative;
-  border: 2px solid #3F0C1F;
-  overflow: hidden;
-  padding: 0;
-  margin-right: -15px;
-  margin-left: auto;
-  margin-bottom: 20px;
-  max-width: 250px;
-}
+   position: relative;
+   border: 2px solid #3F0C1F;
+   overflow: hidden;
+   padding: 0;
+   margin-right: -15px;
+   margin-left: auto;
+   margin-bottom: 20px;
+   max-width: 250px;
+ }
+ .menu-item-photo-info {
+   position: relative;
+   border: 2px solid #3F0C1F;
+   overflow: hidden;
+   padding: 0;
+   margin 0 auto;
+   max-width: 250px;
+ }
 .menu-item-photo div {
   position: absolute;
   bottom: 0;

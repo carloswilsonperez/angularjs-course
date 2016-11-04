@@ -1,0 +1,42 @@
+<div class="container">
+  <h2 id="menu-categories-title" class="text-center">Newsletter</h2>
+  <div class="text-center">
+    Please sign up for our amazing Newsletter.
+  </div>
+
+  <form name="signCtrl.signForm" novalidate>
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input type="text" class="form-control" id="firstName" ng-model="signCtrl.user.firstName" required>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input type="text" class="form-control" id="lastName" ng-model="signCtrl.user.lastName" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" ng-model="signCtrl.user.email" required>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone Number:</label>
+      <input type="tel" class="form-control" id="phone" ng-model="signCtrl.user.phone" required>
+    </div>
+    <div class="form-group">
+      <label for="dish">Favorite Dish (Menu Number):</label>
+      <input type="text" class="form-control" id="dish" ng-model="signCtrl.user.dish" required>
+    </div>
+
+    <button type="submit" class="btn btn-default" ng-disabled="signCtrl.signForm.$invalid" ng-click="signCtrl.save()">Submit</button>
+    <span ng-show="!signCtrl.showDataSavedMessage && !signCtrl.menuNotExists">
+      WARNING: You must complete all the fields to be able to save your information.
+    </span>
+    <span class="form-group" ng-show="signCtrl.showDataSavedMessage">
+      Your information has been saved.
+    </span>
+    <span class="form-group" ng-show="signCtrl.menuNotExists">
+      No such menu number exists.
+    </span>
+
+  </form>
+
+</div>
